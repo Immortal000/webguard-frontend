@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button</title>
+    <style>
+        .button {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .button input { 
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggler {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgb(230, 11, 11);
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .toggler:before {
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            border-radius: 50%;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .toggler {
+            background-color: #1bd343;
+        }
+
+        input:checked + .toggler:before {
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+            -webkit-transform: translateX(26px);
+        }
+
+    </style>
+</head>
+<body style="background-color: #147ace;">
+    <label class="button">
+        <input type="checkbox">
+        <span class="toggler"></span>
+    </label>
+</body>
+
+<script src="button.js"></script>
+
+</html>
